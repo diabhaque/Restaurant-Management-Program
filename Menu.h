@@ -14,6 +14,6 @@ struct Food {
 
 Food InitiateFood(string name, double price, int preptime);
 
-void SetupMenu(Food menu[], int menuLen);
+void SetupMenu(Food* menu, int menuLen);
 
-void DisplayMenu(Food menu[], int menulen);
+void DisplayMenu(Food* menu, int menuLen);
