@@ -14,7 +14,7 @@ Food InitiateFood(string name, double price, int preptime){
 //Function that sets up the menu for the restaurant
 //Inputs: pointer to menu items array, length of the menu items array
 //Output: none
-void SetupMenu(Food *menu, int menuLen){
+void SetupMenu(Food menu[], int menuLen){
   for(int i = 0; i < menuLen; i++){
     String name;
     double price;
@@ -32,7 +32,7 @@ void SetupMenu(Food *menu, int menuLen){
   }
 }
 
-void displayMenu(Food *menu, menulen){
+void displayMenu(Food menu[], menulen){
   cout<<setw(20)<<"Name"<<"Price"<<"Preparation Time"<<endl;
   for(int i=0; i<menulen; i++){
     cout<<setw(20)<<menu[i]->name<<menu[i]->price<<menu[i]->prepTime<<endl;
