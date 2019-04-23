@@ -1,16 +1,20 @@
 #include <iostream>
-#include <string>
+#include <String>
 #include <iomanip>
 #include "Menu.h"
 
+using namespace std;
+
+<<<<<<< HEAD
 //make a food and return it to be added to the menu
 Food InitiateFood(string name, double price, int preptime){
-  Food food=NULL;
+  Food food;
   food.name=name;
   food.price=price;
   food.prepTime=preptime;
   return food;
 }
+=======
 
 //Function that sets up the menu for the restaurant
 //Inputs: pointer to menu items array, length of the menu items array
@@ -33,9 +37,9 @@ void SetupMenu(Food menu[], int menuLen){
   }
 }
 
-void DisplayMenu(Food menu[], int menulen){
-  cout<<setw(20)<<"Name"<<"Price"<<"Preparation Time"<<endl;
-  for(int i=0; i<menulen; i++){
-    cout<<setw(20)<<menu[i]->name<<menu[i]->price<<menu[i]->prepTime<<endl;
+void displayMenu(Food menu[], int menuLen){
+  cout<<"\n"<<"Name"<<setw(10)<<"Price"<<setw(10)<<"Preparation Time"<<endl;
+  for(int i=0; i<menuLen; i++){
+    cout<<menu[i].name<<setw(20)<<menu[i].price<<setw(20)<<menu[i].prepTime<<endl;
   }
 }
