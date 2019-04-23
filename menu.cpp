@@ -1,7 +1,7 @@
 #include <iostream>
 #include <String>
 #include <iomanip>
-<<<<<<< HEAD
+
 //make a food and return it to be added to the menu
 Food InitiateFood(string name, double price, int preptime){
   Food food=NULL;
@@ -9,7 +9,7 @@ Food InitiateFood(string name, double price, int preptime){
   food.price=price;
   food.prepTime=preptime;
   return food;
-=======
+}
 
 //Function that sets up the menu for the restaurant
 //Inputs: pointer to menu items array, length of the menu items array
@@ -30,7 +30,6 @@ void SetupMenu(Food *menu, int menuLen){
     //call function to initiate individual foods
     menu[i] = InitiateFood(name, price, prepTime);
   }
->>>>>>> de0008c6c10e911c817bdf14fff150192e9c542d
 }
 
 void displayMenu(Food *menu, menulen){
