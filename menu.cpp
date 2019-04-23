@@ -1,5 +1,6 @@
 #include <iostream>
 #include <String>
+#include <iomanip>
 <<<<<<< HEAD
 //make a food and return it to be added to the menu
 Food InitiateFood(string name, double price, int preptime){
@@ -30,4 +31,11 @@ void SetupMenu(Food *menu, int menuLen){
     menu[i] = InitiateFood(name, price, prepTime);
   }
 >>>>>>> de0008c6c10e911c817bdf14fff150192e9c542d
+}
+
+void displayMenu(Food *menu, menulen){
+  cout<<setw(20)<<"Name"<<"Price"<<"Preparation Time"<<endl;
+  for(int i=0; i<menulen; i++){
+    cout<<setw(20)<<menu[i]->name<<menu[i]->price<<menu[i]->prepTime<<endl;
+  }
 }
