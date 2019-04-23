@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(){
-  cout<<"Welcome to your restaurant program";
+  cout<<"Welcome to your restaurant program!";
   int numTables=0;
   cin>>numTables;
   int *tables= new int[numTables]();
@@ -11,6 +11,7 @@ int main(){
     cin>>tables[i];
     cout<<tables[i];
   }
+
 
   return 0;
 }
