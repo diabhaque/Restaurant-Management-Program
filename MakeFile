@@ -1,0 +1,8 @@
+myrestaurant.o: myrestaurant.cpp Menu.h
+  g++ -c myrestaurant.cpp
+
+menu.o: menu.cpp Menu.h
+  g++ -c menu.cpp
+
+myrestaurant: myrestaurant.o menu.o
+  g++ myrestaurant.o menu.o -o myrestaurant

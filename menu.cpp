@@ -24,7 +24,7 @@ void SetupMenu(Food* menu, int menuLen){
     double price;
     int prepTime;
 
-    cout << "enter name of food: ";
+    cout <<endl<< "enter name of food: ";
     cin >> name;
     cout << endl << "enter price of food: ";
     cin >> price;
