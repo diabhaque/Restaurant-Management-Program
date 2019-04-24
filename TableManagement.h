@@ -1,7 +1,9 @@
 #include <string>
 
 //struct containing information about individual tables
-Struct Table {
+struct Table {
   int noOfSeats;
   bool isOccupied;
-}
+};
+
+void DisplayTables(Table* tables, int noOfTables);

@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include "TableManagement.h"
+
 
 using namespace std;
 
@@ -38,6 +40,29 @@ void CustomerCheckOut(){
 
 }
 
-void DisplayTables(){
+//function that displays the layout of the tables in the Restaurant
+//if table is occupied, it shows an X for each table
+//if table is not occupied, it shows the number of seats for each table
+//INPUT: the array of all tables, and total number of tables
+void DisplayTables(Table* tables, int noOfTables){
+  for(int i = 0; i < noOfTables; i++){
+    cout << "===  ";
+  }
+  cout << endl;
+  for(int i = 0; i < noOfTables; i++){
+    cout << "|";
 
+    if(tables[i].isOccupied){
+      cout << "X";
+    }else{
+      cout << tables[i].noOfSeats;
+    }
+
+    cout << "|  ";
+  }
+  cout << endl;
+  for(int i = 0; i < noOfTables; i++){
+    cout << "===  ";
+  }
+  cout << endl;
 }
