@@ -1,8 +1,11 @@
-myrestaurant.o: myrestaurant.cpp Menu.h
+myrestaurant.o: myrestaurant.cpp Menu.h TableManagement.h
   g++ -c myrestaurant.cpp
 
 menu.o: menu.cpp Menu.h
   g++ -c menu.cpp
 
-myrestaurant: myrestaurant.o menu.o
-  g++ myrestaurant.o menu.o -o myrestaurant
+TableManagement.o: TableManagement.cpp TableManagement.h
+	g++ -c TableManagement.cpp
+
+myrestaurant: myrestaurant.o menu.o TableManagement.o
+  g++ myrestaurant.o menu.o TableManagement.o -o myrestaurant
