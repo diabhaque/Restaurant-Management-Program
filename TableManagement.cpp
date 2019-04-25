@@ -149,7 +149,7 @@ void InitiateManagement(Table* tables, int noOfTables, Food *menu, int menuLen, 
     cout << "\nCommands available:" << endl;
     cout << "[Customer check-in -> checkin]" << endl;
     cout << "[Customer check-out -> checkout]" << endl;
-    cout << "[Exit program -> ex]" << endl;
+    cout << "[Exit program -> exit]" << endl;
 
     cin >> command;
     if(command == "checkin"){
