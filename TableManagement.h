@@ -6,4 +6,9 @@ struct Table {
   bool isOccupied;
 };
 
+struct Customer {
+  double bill;
+  int tableno;
+};
+
 void DisplayTables(Table* tables, int noOfTables);
