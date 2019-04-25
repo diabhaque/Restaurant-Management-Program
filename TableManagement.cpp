@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include "TableManagement.h"
 #include "Menu.h"
@@ -88,42 +89,43 @@ void CustomerCheckIn(Table* tables, int noOfTables, Food *menu, int menuLen, Cus
     //print their receipt which has their table number
     customer[suggestedTable].tableno=suggestedTable;
 
-  }
-  DisplayMenu(menu, menuLen);
-  string order="YES";
-  double bill=0;
-  int waitingTime=0;
+    DisplayMenu(menu, menuLen);
+    string order="YES";
+    double bill=0;
+    int waitingTime=0;
 
-  //start a loop to keep ordering foood as long as the user wants;
-  while (order=="YES"){
-      //prompts user input to order food
-    cout<<"\nPlease select an item from the menu: ";
-    string item;
-    cin>>item;
-    int count=0;
-    for (int z=0; z<menuLen; z++){
-      if (item==menu[z].name){
-        bill+=menu[z].price;
-        count=1;
-        if (menu[z].prepTime>waitingTime){
-          waitingTime=menu[z].prepTime;
+    //start a loop to keep ordering foood as long as the user wants;
+    while (order=="YES"){
+        //prompts user input to order food
+      cout<<"\nPlease select an item from the menu: ";
+      string item;
+      cin>>item;
+      int count=0;
+      for (int z=0; z<menuLen; z++){
+        if (item==menu[z].name){
+          bill+=menu[z].price;
+          count=1;
+          if (menu[z].prepTime>waitingTime){
+            waitingTime=menu[z].prepTime;
+          }
         }
       }
+      if (count==0){
+        cout<<item<<" is not in menu. Please select another option."<<endl;
+        continue;
+      }
+      cout<<"\nDo you want to order more food?(YES/NO): ";
+      cin>>order;
+      if (order=="NO"){
+        break;
+      }
     }
-    if (count==0){
-      cout<<item<<" is not in menu. Please select another option."<<endl;
-    }
-    cout<<"\nDo you want to order more food?(YES/NO): ";
-    cin>>order;
-    if (order=="NO"){
-      break;
-    }
+    //customer's bill is recorded
+    customer[suggestedTable].bill=bill;
+    cout<<"Your bill is: "<<bill<<" HKD"<<endl;
+    cout<<"Please wait "<<waitingTime<<" minutes for your food"<<endl;
+    printReceipt(bill, suggestedTable);
   }
-  //customer's bill is recorded
-  customer[suggestedTable].bill=bill;
-  cout<<"Your bill is: "<<bill<<" HKD"<<endl;
-  cout<<"Please wait "<<waitingTime<<" minutes for your food"<<endl;
-  printReceipt(bill, suggestedTable);
 }
 
 void CustomerCheckOut(Table * tables, int noOfTables, Customer *customer){
@@ -147,6 +149,7 @@ void InitiateManagement(Table* tables, int noOfTables, Food *menu, int menuLen, 
     cout << "\nCommands available:" << endl;
     cout << "[Customer check-in -> checkin]" << endl;
     cout << "[Customer check-out -> checkout]" << endl;
+    cout << "[Exit program -> ex]" << endl;
 
     cin >> command;
     if(command == "checkin"){
@@ -155,7 +158,9 @@ void InitiateManagement(Table* tables, int noOfTables, Food *menu, int menuLen, 
     }else if(command == "checkout"){
       //call customer check out function
       CustomerCheckOut(tables, noOfTables, customer);
-
+    }else if(command == "exit"){
+      //exit program
+      break;
     }else{
       cout << "invalid command, try again" << endl;
       continue;
