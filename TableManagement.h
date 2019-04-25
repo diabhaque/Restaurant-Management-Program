@@ -1,4 +1,5 @@
 #include <string>
+#include "Menu.h"
 
 //struct containing information about individual tables
 struct Table {
@@ -12,3 +13,5 @@ struct Customer {
 };
 
 void DisplayTables(Table* tables, int noOfTables);
+
+void InitiateManagement(Table* tables, int noOfTables, Food *menu, int menuLen, Customer *customer);

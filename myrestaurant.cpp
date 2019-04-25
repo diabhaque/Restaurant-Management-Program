@@ -27,9 +27,7 @@ int main(){
 
   //Set up menu and tables first.
   //When the customer comes in to start the program, the tables and menu are displayed for him
+  InitiateManagement(tables, numTables, menu, menuLen, customers);
 
-  while (true){
-    InitiateManagement(tables, numTables, menu, menuLen, customers);
-  }
   return 0;
 }
