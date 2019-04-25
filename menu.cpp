@@ -26,7 +26,7 @@ void SetupMenu(Food* menu, int menuLen){
 
     cout <<endl<< "enter name of food: ";
     cin >> name;
-    cout << endl << "enter price of food: ";
+    cout << endl << "enter price of food (in HKD): ";
     cin >> price;
     cout << endl << "enter preparation time of food (in minutes): ";
     cin >> prepTime;
@@ -37,6 +37,8 @@ void SetupMenu(Food* menu, int menuLen){
 }
 
 void DisplayMenu(Food* menu, int menuLen){
+  // letting the customer see the menu
+  cout<<"Menu:\n";
   cout<<"\n"<<"Name"<<"\t\t"<<"Price"<<"\t\t"<<"Preparation Time"<<endl;
   for(int i=0; i<menuLen; i++){
     cout<<menu[i].name<<"\t\t"<<menu[i].price<<"\t\t"<<menu[i].prepTime<<endl;

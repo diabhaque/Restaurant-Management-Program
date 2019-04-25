@@ -10,6 +10,7 @@ int main(){
   cout<<"Please enter the number of tables you want in your restaurant:"<<endl;
   cin>>numTables;
   Table *tables= new Table[numTables]();
+  Customer *customers= new Customer[numTables]();
 
   for (int i=0; i<numTables; i++){
     cout<<"Number of seats for table "<<i+1<<": ";
@@ -18,13 +19,17 @@ int main(){
     cout<<endl;
   }
 
-  DisplayTables(tables, numTables);
-
   int menuLen=0;
   cout<<"Please enter the number of items you want in your menu:"<<endl;
   cin>>menuLen;
   Food *menu= new Food[menuLen]();
   SetupMenu(menu, menuLen);
-  DisplayMenu(menu, menuLen);
+
+  //Set up menu and tables first.
+  //When the customer comes in to start the program, the tables and menu are displayed for him
+
+  while (true){
+    InitiateManagement(tables, numTables, menu, menuLen, customers);
+  }
   return 0;
 }
