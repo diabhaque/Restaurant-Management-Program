@@ -149,6 +149,7 @@ void InitiateManagement(Table* tables, int noOfTables, Food *menu, int menuLen, 
     cout << "\nCommands available:" << endl;
     cout << "[Customer check-in -> checkin]" << endl;
     cout << "[Customer check-out -> checkout]" << endl;
+    cout << "[Display tables -> tables]" << endl;
     cout << "[Exit program -> exit]" << endl;
 
     cin >> command;
@@ -161,6 +162,9 @@ void InitiateManagement(Table* tables, int noOfTables, Food *menu, int menuLen, 
     }else if(command == "exit"){
       //exit program
       break;
+    }else if(command == "tables"){
+      //display table layout
+      DisplayTables(tables, noOfTables);
     }else{
       cout << "invalid command, try again" << endl;
       continue;
