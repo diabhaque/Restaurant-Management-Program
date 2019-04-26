@@ -105,6 +105,7 @@ void CustomerCheckIn(Table* tables, int noOfTables, Food *menu, int menuLen, Cus
         if (item==menu[z].name){
           bill+=menu[z].price;
           count=1;
+          //only count the waiting time of the food that requires the most time
           if (menu[z].prepTime>waitingTime){
             waitingTime=menu[z].prepTime;
           }

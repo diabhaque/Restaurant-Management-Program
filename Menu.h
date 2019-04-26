@@ -17,3 +17,5 @@ Food InitiateFood(string name, double price, int preptime);
 void SetupMenu(Food* menu, int menuLen);
 
 void DisplayMenu(Food* menu, int menuLen);
+
+void SetupMenuViaFile(Food* menu, string filepath);
