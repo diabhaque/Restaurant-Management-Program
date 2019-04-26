@@ -1,10 +1,12 @@
 #include <iostream>
 #include "Menu.h"
 #include "TableManagement.h"
+#include "HelperFunctions.h"
 
 using namespace std;
 
 int main(){
+  ClearScreen();
   cout<<"Welcome to your restaurant program!"<<endl;
   int numTables=0;
   cout<<"Please enter the number of tables you want in your restaurant: ";
@@ -27,6 +29,7 @@ int main(){
   Food *menu= new Food[menuLen]();
 
   while(true){
+    ClearScreen();
     //initiate command menu for setting up the restaurant's menu
     cout << "Setup Menu" << endl;
     cout << "===========" << endl;
