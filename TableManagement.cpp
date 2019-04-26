@@ -3,14 +3,10 @@
 #include <string>
 #include "TableManagement.h"
 #include "Menu.h"
+#include "HelperFunctions.h"
 
 
 using namespace std;
-
-//function that displays the layout of the tables in the Restaurant
-//if table is occupied, it shows an X for each table
-//if table is not occupied, it shows the number of seats for each table
-//INPUT: the array of all tables, and total number of tables
 
 void printReceipt(double bill, int customerno){
   cout<<"========================="<<endl;
@@ -20,7 +16,12 @@ void printReceipt(double bill, int customerno){
   cout<<"========================="<<endl;
 }
 
+//function that displays the layout of the tables in the Restaurant
+//if table is occupied, it shows an X for each table
+//if table is not occupied, it shows the number of seats for each table
+//INPUT: the array of all tables, and total number of tables
 void DisplayTables(Table* tables, int noOfTables){
+  ClearScreen();
   //just some artwork ;)
   //letting customers know we're gonna show the numTables
   cout<<"Tables Available : \n";
@@ -69,6 +70,7 @@ int FindNearestTable(Table* tables, int noOfTables, int pplNum){
 //INPUT: the array of all tables, and total number of tables
 //add customer to record bill and table number
 void CustomerCheckIn(Table* tables, int noOfTables, Food *menu, int menuLen, Customer *customer){
+  ClearScreen();
   //record number of people who came in
   int peopleNum = 0;
   cout << "Enter number of people: " << endl;
@@ -130,6 +132,7 @@ void CustomerCheckIn(Table* tables, int noOfTables, Food *menu, int menuLen, Cus
 }
 
 void CustomerCheckOut(Table * tables, int noOfTables, Customer *customer){
+  ClearScreen();
   //prompt customer to enter their customer number from the receipt
   //this allows us to discover their record
   //so we can remove empty their table and collect their bill
@@ -143,6 +146,7 @@ void CustomerCheckOut(Table * tables, int noOfTables, Customer *customer){
 
 //Function to initiate table management with check-ins and check-outs
 void InitiateManagement(Table* tables, int noOfTables, Food *menu, int menuLen, Customer *customer){
+  ClearScreen();
   cout << "\nrestaurant initiated" << endl;
   cout << "====================" << endl;
   string command;
