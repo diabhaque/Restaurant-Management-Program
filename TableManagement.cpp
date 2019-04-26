@@ -4,9 +4,12 @@
 #include "TableManagement.h"
 #include "Menu.h"
 #include "HelperFunctions.h"
+#include "Finance.h"
 
 
 using namespace std;
+
+int balance = 0;
 
 void printReceipt(double bill, int customerno){
   cout<<"========================="<<endl;
@@ -139,6 +142,9 @@ void CustomerCheckOut(Table * tables, int noOfTables, Customer *customer){
   int customerno;
   cout<<"Please enter your customer number(shown in receipt): ";
   cin>> customerno;
+
+  //add money to balance
+  AddMoney(balance, customer[customerno].bill);
   cout<<"Your bill is "<<customer[customerno].bill<<endl;
   cout<<"Please come again!"<<endl;
   tables[customerno].isOccupied=false;
@@ -156,6 +162,7 @@ void InitiateManagement(Table* tables, int noOfTables, Food *menu, int menuLen, 
     cout << "[Customer check-out -> checkout]" << endl;
     cout << "[Display tables -> tables]" << endl;
     cout << "[Display menu -> menu]" << endl;
+    cout << "[Display money -> $]" << endl;
     cout << "[Exit program -> exit]" << endl;
 
     cin >> command;
@@ -175,7 +182,12 @@ void InitiateManagement(Table* tables, int noOfTables, Food *menu, int menuLen, 
       ClearScreen();
       //display menu
       DisplayMenu(menu, menuLen);
-    }else{
+    }else if(command == "$"){
+      ClearScreen();
+      //Display amount of money collected
+      DisplayMoney(balance);
+    }
+    else{
       cout << "invalid command, try again" << endl;
       continue;
     }
