@@ -65,5 +65,9 @@ int main(){
   //run the code for customer check-ins, check-outs, and other avaialable commands
   InitiateManagement(tables, numTables, menu, menuLen, customers);
 
+  delete[] tables;
+  delete[] customers;
+  delete[] menu;
+
   return 0;
 }
