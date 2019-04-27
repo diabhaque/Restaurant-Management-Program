@@ -105,6 +105,7 @@ void CustomerCheckIn(Table* tables, int noOfTables, Food *menu, int menuLen, Cus
       cout<<"\nPlease select an item from the menu: ";
       string item;
       cin>>item;
+      item=ToLowerCase(item);
       int count=0;
       for (int z=0; z<menuLen; z++){
         if (item==menu[z].name){
@@ -124,6 +125,16 @@ void CustomerCheckIn(Table* tables, int noOfTables, Food *menu, int menuLen, Cus
       cin>>order;
       if (order=="NO"){
         break;
+      }else if (order !="YES" && order != "NO"){
+        cout<<"Invalid input. Please try again."<<endl;
+        while(order!="YES" && order !="NO"){
+          cout<<"\nDo you want to order more food?(YES/NO): ";
+          cin>>order;
+          if (order!="YES" && order !="NO"){
+            cout<<"Invalid input. Please try again."<<endl;
+          }
+        }
+        continue;
       }
     }
     //customer's bill is recorded

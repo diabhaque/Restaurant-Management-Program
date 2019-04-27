@@ -73,8 +73,9 @@ void SetupMenuViaFile(Food* menu, string filepath){
 void DisplayMenu(Food* menu, int menuLen){
   // letting the customer see the menu
   cout<<"Menu:\n";
-  cout<<"\n"<<setw(12)<<"Name"<<setw(11)<<"Price"<<setw(20)<<"Preparation Time"<<endl;
+  cout<<left;
+  cout<<"\n"<<setw(12)<<"Name"<<right<<setw(11)<<"Price"<<setw(20)<<"Preparation Time"<<endl;
   for(int i=0; i<menuLen; i++){
-    cout<<setw(12)<<menu[i].name<<setw(11)<<menu[i].price<<setw(20)<<menu[i].prepTime<<endl;
+    cout<<left<<setw(12)<<menu[i].name<<right<<setw(11)<<menu[i].price<<setw(20)<<menu[i].prepTime<<endl;
   }
 }
