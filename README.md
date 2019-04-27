@@ -5,7 +5,7 @@ Computer Programming 2 Course Code ENGG1340 Group 38 Project
 We are planning to make a restaurant management system to handle table reservations and food ordering.
 
 ## How Does Our Program Set Up A Restaurant?
-It begins with setting up a specific restaurant. Which, according to user input, records the number of tables and the seating capacity of each table. We then set up a menu through input from a file or manual input that contains all info about the menu including prices. The number of items in the menu must be stated before it one can use a file to input the values. A sample of how the file should be designed is shown through the "menutestfile.txt". The menu is an array of structs called food which stores the food name, the food price and the waiting time on it. These inputs are assumed to be from the restaurant manager/owner. The program is then able to display the tables and the menu on command.
+It begins with setting up a specific restaurant. Which, according to user input, records the number of tables and the seating capacity of each table. We then set up a menu through input from a file or manual input that contains all info about the menu including prices. The number of items in the menu must be stated before it one can use a file to input the values. A sample of how the file should be designed is shown through the "menutestfile.txt". The menu is an array of structs called food which stores the food name (which will have no spaces), the food price and the waiting time on it. These inputs are assumed to be from the restaurant manager/owner. The program is then able to display the tables and the menu on command.
 
 ## How Does Our Program Implement A System For Customers?
 * We allow customers to book a table.
