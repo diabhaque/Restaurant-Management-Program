@@ -19,19 +19,19 @@ It begins with setting up a specific restaurant. Which, according to user input,
 ## How Does Our Program Fulfill The Requirements Of The Project?
 The menu can be uploaded from a file, so File I/O will be implemented. Searching for available tables will be done. Adding/editing/deleting will be implemented in both tables and customer orders. We have dynamic memory management with arrays of structs. We've used multiple files for separate functions like menu.cpp, TableManagement.cpp, finance.cpp, etc. The in-code documentation is done before almost every function describing how they work. We've also made a make file to allow the compilation to be simpler and more efficient. The code will be efficiently documented so that it is easy to understand.
 
-##Compilation and execution instructions
+## Compilation and execution instructions
 To compile and run, type:
 ```
 make
 ./myrestaurant
 ```
 
-##Setting up restaurant
+## Setting up restaurant
 First you will be prompted to enter the number of tables you want in your restaurant. This field will accept only integers.
 Then, you will be prompted to enter the number of seats for each table. This field will accept only integers.
 Then, you will be prompted to enter the number of items you want in your menu. If you will be fetching your menu from a text file, you still need to specify how many items the file contains.
 
-##Menu Commands
+## Menu Commands
 At this stage, you will be given two options:
 
 1. Manual:
@@ -46,7 +46,7 @@ where food-name is the name of the food (again, no spaces!), x is price in HKD, 
 There should not be empty lines between lines.
 We have included a test file "menutestfile.txt" as an example input case.
 
-##Restaurant commands
+## Restaurant commands
 After initiating the restaurant and the menu, you will see new available commands:
 
 1. Check-in:
