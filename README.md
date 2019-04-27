@@ -18,3 +18,56 @@ It begins with setting up a specific restaurant. Which, according to user input,
 
 ## How Does Our Program Fulfill The Requirements Of The Project?
 The menu can be uploaded from a file, so File I/O will be implemented. Searching for available tables will be done. Adding/editing/deleting will be implemented in both tables and customer orders. We have dynamic memory management with arrays of structs. We've used multiple files for separate functions like menu.cpp, TableManagement.cpp, finance.cpp, etc. The in-code documentation is done before almost every function describing how they work. We've also made a make file to allow the compilation to be simpler and more efficient. The code will be efficiently documented so that it is easy to understand.
+
+##Compilation and execution instructions
+To compile and run, type:
+```
+make
+./myrestaurant
+```
+
+##Setting up restaurant
+First you will be prompted to enter the number of tables you want in your restaurant. This field will accept only integers.
+Then, you will be prompted to enter the number of seats for each table. This field will accept only integers.
+Then, you will be prompted to enter the number of items you want in your menu. If you will be fetching your menu from a text file, you still need to specify how many items the file contains.
+
+##Menu Commands
+At this stage, you will be given two options:
+
+1. Manual:
+You can enter the item name (please no spaces!), price in HKD, and preparation time in minutes for each item.
+
+2. File:
+You can specify the file path for your menu file. The files should contain lines following the following format:
+```
+food-name x y
+```
+where food-name is the name of the food (again, no spaces!), x is price in HKD, and y is preparation time in minutes.
+There should not be empty lines between lines.
+We have included a test file "menutestfile.txt" as an example input case.
+
+##Restaurant commands
+After initiating the restaurant and the menu, you will see new available commands:
+
+1. Check-in:
+Lets customers specify the number of people in their group.
+Suggests best possible table choice
+Brings up the menu and lets customer choose items
+Prints a receipt for the customer
+
+2. Check-out:
+Lets customers check out by specifying their receipt number.
+Adds revenue to the restaurant's balance
+
+3. Display tables:
+Displays a layout of the tables.
+Tables show an 'X' if they're occupied, otherwise they show the number of seats.
+
+4. Display menu:
+Displays the menu for reference.
+
+5. Display money:
+Displays the current amount of money made by the restaurant ever since it was initiated.
+
+6. Exit:
+Terminates the program and clears the dynamically allocated memory.
