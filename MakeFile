@@ -1,3 +1,9 @@
+HelperFunctions.o: HelperFunctions.cpp
+	g++ -c HelperFunctions.cpp
+
+Finance.o: Finance.cpp
+	g++ -c Finance.cpp
+
 myrestaurant.o: myrestaurant.cpp Menu.h TableManagement.h
   g++ -c myrestaurant.cpp
 
@@ -7,5 +13,5 @@ menu.o: menu.cpp Menu.h
 TableManagement.o: TableManagement.cpp TableManagement.h
 	g++ -c TableManagement.cpp
 
-myrestaurant: myrestaurant.o menu.o TableManagement.o
-  g++ myrestaurant.o menu.o TableManagement.o -o myrestaurant
+myrestaurant: HelperFunctions.o Finance.o myrestaurant.o menu.o TableManagement.o
+  g++ HelperFunctions.o Finance.o myrestaurant.o menu.o TableManagement.o -o myrestaurant
