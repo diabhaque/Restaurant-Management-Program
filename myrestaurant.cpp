@@ -5,6 +5,11 @@
 
 using namespace std;
 
+//main function
+//creates a dynamic array for tables, customers and menu(stores array of foods)
+//sets up tables and menu by calling respective funtions
+//calls the initiate management funtion
+
 int main(){
   ClearScreen();
   cout<<"Welcome to your restaurant program!"<<endl;

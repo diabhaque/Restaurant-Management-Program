@@ -10,7 +10,8 @@
 using namespace std;
 
 int balance = 0;
-
+//printReceipt function prints the customer number and the bill for the customer
+//INPUT: Takes in the bill and the customer number for the customer
 void printReceipt(double bill, int customerno){
   cout<<"========================="<<endl;
   cout<<left;
@@ -145,6 +146,8 @@ void CustomerCheckIn(Table* tables, int noOfTables, Food *menu, int menuLen, Cus
   }
 }
 
+//CustomerCheckOut frees up table occupied by customer and prints out bill and farewell message
+//INPUT: Takes in the array of tables, the number of tables and the list of customers
 void CustomerCheckOut(Table * tables, int noOfTables, Customer *customer){
   ClearScreen();
   //prompt customer to enter their customer number from the receipt
@@ -162,6 +165,7 @@ void CustomerCheckOut(Table * tables, int noOfTables, Customer *customer){
 }
 
 //Function to initiate table management with check-ins and check-outs
+//INPUT: Takes in the array of tables, the number of tables, the menu and the array of customers
 void InitiateManagement(Table* tables, int noOfTables, Food *menu, int menuLen, Customer *customer){
   ClearScreen();
   cout << "\nrestaurant initiated" << endl;
