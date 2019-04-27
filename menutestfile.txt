@@ -1,0 +1,5 @@
+chicken 30 20
+rice 20 10
+milk 15 10
+ice-cream 30 10
+beef-curry 30 25
